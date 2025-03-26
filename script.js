@@ -367,71 +367,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Form submission handling for Google Sheets
-    // Define the submitForm function globally
-    window.submitForm = function(event) {
-        event.preventDefault();
-        
-        const form = document.getElementById('booking-form');
-        const responseDiv = document.getElementById('form-response');
-        
-        // Get form data
-        const formData = new FormData(form);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Show loading message
-        if (responseDiv) {
-            responseDiv.innerHTML = '<p class="text-info">Sending your message...</p>';
-        }
-        
-        // Replace with your actual Google Script URL
-        const scriptURL = 'https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_ID_HERE/exec';
-        
-        // Send form data to Google Sheets
-        fetch(scriptURL, {
-            method: 'POST',
-            body: new URLSearchParams(formObject)
-        })
-        .then(response => {
-            // Handle successful form submission
-            if (responseDiv) {
-                responseDiv.innerHTML = '<p class="text-success">Thank you! Your booking request has been submitted. I will contact you shortly.</p>';
-            } else {
-                alert('Thank you! Your booking request has been submitted. I will contact you shortly.');
-            }
-            // Reset form
-            form.reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Handle error
-            if (responseDiv) {
-                responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly via email or phone.</p>';
-            } else {
-                alert('There was an error submitting your form. Please try again or contact me directly via email or phone.');
-            }
-        });
-    };
+    // Form submission handler function
+window.submitForm = function(event) {
+    event.preventDefault();
     
-    // Add submit event listener to the form
-    const bookingForm = document.getElementById('booking-form');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            window.submitForm(e);
-        });
+    const form = document.getElementById('booking-form');
+    const responseDiv = document.getElementById('form-response');
+    
+    // Get form data
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+    
+    // Show loading message
+    if (responseDiv) {
+        responseDiv.innerHTML = '<p class="text-info">Sending your message...</p>';
     }
     
-    // Smooth scrolling for navigation
+    // Replace with your actual Google Script URL - this is where you need to insert your deployed Google Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzO_f1JqemCIWSCSmZg-PtrrFx-G4DB7R5ZFAcOMJFBSwvquSJlb0CKnBpMMicAXuST/exec';
+    
+    // Convert form data to URL encoded string for POST request
+    const urlEncodedData = new URLSearchParams();
+    Object.keys(formObject).forEach(key => {
+        urlEncodedData.append(key, formObject[key]);
+    });
+    
+    // Send data to Google Sheets
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // Important for cross-origin requests to Google Scripts
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncodedData
+    })
+    .then(() => {
+        // Show success message
+        if (responseDiv) {
+            responseDiv.innerHTML = '<p class="text-success">Thank you! Your booking request has been submitted. I will contact you shortly.</p>';
+        }
+        form.reset();
+    })
+    .catch(error => {
+        console.error('Error submitting form:', error);
+        if (responseDiv) {
+            responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly via email or phone.</p>';
+        }
+    });
+};
+    
+    // Smooth scrolling for navigation - FIXED VERSION
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            
+            const targetID = this.getAttribute('href');
+            const target = document.querySelector(targetID);
+            
             if (target) {
                 const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
