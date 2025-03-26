@@ -393,3 +393,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Form submission to Google Sheets
+function submitForm(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('booking-form');
+    const responseDiv = document.getElementById('form-response');
+    
+    // Get form data
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+    
+    // Show loading message
+    responseDiv.innerHTML = '<p class="text-info">Sending your message...</p>';
+    
+    // Send form data to Google Sheets
+    fetch('https://script.google.com/macros/s/AKfycbxQtO91bLydSBZj58NZs4t0nZRT1mkqQWWHJ7UubJk6oxYi52cd9_wrIt2Aj0xn81wM/exec', {
+        method: 'POST',
+        body: new URLSearchParams(formObject)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.result === 'success') {
+            // Show success message
+            responseDiv.innerHTML = '<p class="text-success">Thank you! Your booking request has been submitted. I will contact you shortly.</p>';
+            // Reset form
+            form.reset();
+        } else {
+            // Show error message
+            responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly.</p>';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly.</p>';
+    });
+}
