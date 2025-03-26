@@ -1,389 +1,441 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ritambra Sharma - Creative Makeup Artist</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">Ritambra Sharma</div>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Ritambra Sharma</h1>
-                <h2 class="hero-subtitle">Professional Makeup Artist</h2>
-                <p>Glamour & Beauty Specialist
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn">Book A Consultation</a>
-                    <a href="https://wa.me/971555218283?text=Hi%2C%20I'm%20interested%20in%20your%20makeup%20services.%20Could%20you%20please%20provide%20more%20information%20about%20your%20availability%20and%20rates%3F" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Connect on WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-flex">
-                <div class="about-img">
-                    <img src="about1.png" alt="Ritambra Sharma">
-                </div>
-                <div class="about-content">
-                    <p>Certified Makeup Artist with extensive experience in bridal, fashion, editorial, and special effects makeup. Adept at airbrushing, HD makeup application, skincare consultation, and color theory to enhance natural beauty.</p>
-                    <p>Skilled in client consultation, cosmetic application, contouring, highlighting, and facial aesthetics. Strong expertise in hygiene & sanitation standards, beauty trends, and product knowledge.</p>
-                    <p>Passionate about delivering high-quality, customized beauty services for photoshoots, weddings, and special events. My creative approach turns makeup into art, pushing boundaries while maintaining precision and technique.</p>
-                    <p>With a background in education and economics, I bring a unique perspective to the beauty industry, combining creativity with analytical thinking and meticulous attention to detail.</p>
-                    <p>Based in Dubai, UAE, I work with clients both locally and internationally to create stunning looks tailored to their specific needs and preferences.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="brid.png" alt="Bridal Makeup">
-                    </div>
-                    <div class="service-info">
-                        <h3 class="service-title">Bridal Makeup</h3>
-                        <p>Customized bridal makeup services tailored to your style, theme, and personality. Long-lasting looks with HD and airbrush techniques.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="editorial.png" alt="Editorial Makeup">
-                    </div>
-                    <div class="service-info">
-                        <h3 class="service-title">Editorial Makeup</h3>
-                        <p>Creative and artistic makeup for photo shoots, fashion shows, and editorial projects. Bold and innovative looks to make your concept come alive.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="cinema1.png" alt="Special Effects">
-                    </div>
-                    <div class="service-info">
-                        <h3 class="service-title">Special Effects</h3>
-                        <p>Transform with special effects makeup for films, events, or themed parties. From subtle scars to complete character transformations.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="face.png" alt="Skincare Consultation">
-                    </div>
-                    <div class="service-info">
-                        <h3 class="service-title">Skincare Consultation</h3>
-                        <p>Personalized skincare advice and routines to enhance your natural beauty and prepare your skin for makeup application.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>My Portfolio</h2>
-            <div class="portfolio-categories">
-                <div class="category active" data-filter="all">All</div>
-                <div class="category" data-filter="glam">Glam</div>
-                <div class="category" data-filter="editorial">Editorial</div>
-                <div class="category" data-filter="fashion">Fashion</div>
-                <div class="category" data-filter="sfx">Special Effects</div>
-                <div class="category" data-filter="beauty">Beauty</div>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Portfolio items will be dynamically added via JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>My Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div>
-                        <h3>Bridal Makeup & HD Makeup Application</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <div>
-                        <h3>Airbrush Makeup & Special Effects (SFX)</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <div>
-                        <h3>Skincare Analysis & Cosmetic Product Knowledge</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div>
-                        <h3>Color Theory, Contouring & Highlighting</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <div>
-                        <h3>Makeup for Fashion & Editorial Shoots</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div>
-                        <h3>Eyebrow Shaping & Eyelash Extensions</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-pump-soap"></i>
-                    </div>
-                    <div>
-                        <h3>Hygiene & Sanitation Standards</h3>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon">
-                        <i class="fas fa-magic"></i>
-                    </div>
-                    <div>
-                        <h3>Creative & Avant-garde Techniques</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>Client Testimonials</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-slide">
-                    <p class="testimonial-text">"Ritambra did my bridal makeup and I couldn't have been happier! She understood exactly what I wanted and created a stunning look that lasted all day and photographed beautifully."</p>
-                    <p class="testimonial-author">- Priya S., Bridal Client</p>
-                </div>
-                <div class="testimonial-slide">
-                    <p class="testimonial-text">"I worked with Ritambra on a fashion editorial shoot and her creativity was outstanding. She brought our vision to life with her makeup artistry and was professional throughout the entire shoot."</p>
-                    <p class="testimonial-author">- Maya K., Fashion Photographer</p>
-                </div>
-                <div class="testimonial-slide">
-                    <p class="testimonial-text">"The special effects makeup Ritambra created for our production was incredible. Her attention to detail and ability to transform our actors exceeded our expectations."</p>
-                    <p class="testimonial-author">- Rahul M., Film Director</p>
-                </div>
-                <div class="testimonial-slide">
-                    <p class="testimonial-text">"I've been going to Ritambra for all my special events. She has a remarkable talent for enhancing natural beauty while still making you feel like the best version of yourself."</p>
-                    <p class="testimonial-author">- Sarah J., Regular Client</p>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <div class="prev-btn"><i class="fas fa-chevron-left"></i></div>
-                <div class="slider-dots"></div>
-                <div class="next-btn"><i class="fas fa-chevron-right"></i></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education & Certification Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2>Professional Certifications</h2>
-            <div class="about-flex">
-                <div class="about-content">
-                    <h3>Makeup & Hairstyling</h3>
-                    <p><strong>Complete Artistic Pro Specialist in Hairstyling & Makeup Artist</strong><br>
-                       AOFM Academy of Freelance Makeup, London</p>
-                    
-                    <h3>Industry Accreditations</h3>
-                    <p><strong>Certified CIBTAC & BABTAC Professional</strong><br>
-                       Confederation of International Beauty Therapy and Cosmetology & British Association of Beauty Therapy and Cosmetology</p>
-                    <p>These prestigious accreditations verify professional competence in maintaining the highest standards of hygiene, safety, and technical expertise in beauty therapy and cosmetology practices.</p>
-                </div>
-                <div class="videos-container">
-                    <div class="about-video">
-                        <video controls>
-                            <source src="VIDE01.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="about-video">
-                        <video controls>
-                            <source src="VIDEO2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="about-video">
-                        <video controls>
-                            <source src="video33.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="about-video">
-                        <video controls>
-                            <source src="video55.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Close mobile menu when a nav item is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Portfolio filtering
+    const categories = document.querySelectorAll('.category');
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+    
+    // Portfolio items data - Updated with Glam instead of Bridal and added Fashion category (8 images)
+    const portfolioItems = [
+        // Glam Category (4 items) - previously Bridal, keeping same images
+        {
+            id: 1,
+            category: 'glam',
+            image: 'p3.png',
+            title: 'Modern Glam',
+            description: 'Contemporary glamour makeup'
+        },
+        {
+            id: 2,
+            category: 'glam',
+            image: 'p4.png',
+            title: 'Traditional Glam',
+            description: 'Classic glamour beauty'
+        },
+        {
+            id: 3,
+            category: 'glam',
+            image: 'p5.png',
+            title: 'Destination Event',
+            description: 'Cinema event makeup'
+        },
+        {
+            id: 4,
+            category: 'glam',
+            image: 'p6.png',
+            title: 'Group Glamour',
+            description: 'Group glamour looks'
+        },
+        
+        // Editorial Category (4 items)
+        {
+            id: 5,
+            category: 'editorial',
+            image: 'editorial.png',
+            title: 'Bold Editorial',
+            description: 'Creative makeup for fashion magazine'
+        },
+        {
+            id: 6,
+            category: 'editorial',
+            image: 'editorial1232.png',
+            title: 'IFW',
+            description: 'Group for IFW'
+        },
+        {
+            id: 7,
+            category: 'editorial',
+            image: 'p7.png',
+            title: 'Color Story',
+            description: 'Vibrant editorial concept'
+        },
+        {
+            id: 8,
+            category: 'editorial',
+            image: 'p8.png',
+            title: 'Geometric Lines',
+            description: 'Abstract editorial concept'
+        },
+        
+        // Fashion Category (expanded to 8 items) with placeholder names
+        {
+            id: 9,
+            category: 'fashion',
+            image: 'f111.png',
+            title: 'Litle Queen',
+            description: 'Fashion week makeup'
+        },
+        {
+            id: 10,
+            category: 'fashion',
+            image: 'f222.png',
+            title: 'Bold Fashion',
+            description: 'Couture fashion makeup'
+        },
+        {
+            id: 11,
+            category: 'fashion',
+            image: 'f3.png',
+            title: 'Fashion Forward',
+            description: 'Contemporary fashion look'
+        },
+        {
+            id: 12,
+            category: 'fashion',
+            image: 'f4.png',
+            title: 'Designer Showcase',
+            description: 'Designer collection makeup'
+        },
+        {
+            id: 13,
+            category: 'fashion',
+            image: 'f5.png',
+            title: 'Avant-Garde Fashion',
+            description: 'Experimental fashion makeup'
+        },
+        {
+            id: 14,
+            category: 'fashion',
+            image: 'f6.png',
+            title: 'Fashion Confident',
+            description: 'Magazine cover look'
+        },
+        {
+            id: 15,
+            category: 'fashion',
+            image: 'f7.png',
+            title: 'Seasonal Collection',
+            description: 'Spring/Summer fashion makeup'
+        },
+        {
+            id: 16,
+            category: 'fashion',
+            image: 'f8.png',
+            title: 'Fashion Show',
+            description: 'Backstage fashion week makeup'
+        },
+        
+        // Special Effects Category (4 items)
+        {
+            id: 17,
+            category: 'sfx',
+            image: 'p1.png',
+            title: 'Fantasy Creature',
+            description: 'Special effects makeup for mythical character'
+        },
+        {
+            id: 18,
+            category: 'sfx',
+            image: 'p9.png',
+            title: 'Alien Transformation',
+            description: 'Sci-fi character special effects'
+        },
+        {
+            id: 19,
+            category: 'sfx',
+            image: 'p10.png',
+            title: 'Futuristic Character',
+            description: 'Sci-fi inspired special effects'
+        },
+        {
+            id: 20,
+            category: 'sfx',
+            image: 'p11.png',
+            title: 'Zombie Effect',
+            description: 'Horror-inspired character'
+        },
+        
+        // Beauty Category (4 items)
+        {
+            id: 21,
+            category: 'beauty',
+            image: 'p12.png',
+            title: 'Glowing Skin',
+            description: 'Natural beauty enhancement'
+        },
+        {
+            id: 22,
+            category: 'beauty',
+            image: 'p13.png',
+            title: 'Red Carpet Ready',
+            description: 'Glamorous event makeup'
+        },
+        {
+            id: 23,
+            category: 'beauty',
+            image: 'p14.png',
+            title: 'Luminous Skin',
+            description: 'Dewy makeup look'
+        },
+        {
+            id: 24,
+            category: 'beauty',
+            image: 'p15.png',
+            title: 'Smoky Eye',
+            description: 'Classic evening look'
+        }
+    ];
+    
+    // Generate portfolio items
+    function generatePortfolioItems() {
+        if (!portfolioGrid) return;
+        
+        portfolioGrid.innerHTML = '';
+        
+        portfolioItems.forEach(item => {
+            const portfolioItem = document.createElement('div');
+            portfolioItem.className = 'portfolio-item';
+            portfolioItem.setAttribute('data-category', item.category);
+            portfolioItem.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" class="portfolio-img">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="contact-flex">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Dubai, UAE</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>mailmeritambra@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+971 55 521 8283</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div>
-                            <h3>Instagram</h3>
-                            <p>@ritambrasharma_</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="booking-form" onsubmit="submitForm(event)">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
-                        </div>
-                        <div class="form-group">
-                            <select name="service" class="form-control" required>
-                                <option value="" disabled selected>Select Service</option>
-                                <option value="Glam Makeup">Glam Makeup</option>
-                                <option value="Editorial Makeup">Editorial Makeup</option>
-                                <option value="Fashion Makeup">Fashion Makeup</option>
-                                <option value="Special Effects">Special Effects</option>
-                                <option value="Beauty Makeup">Beauty Makeup</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" name="date" class="form-control" placeholder="Preferred Date">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="details" class="form-control" placeholder="Additional Details" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                        <div id="form-response" class="mt-3"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Ritambra Sharma</h3>
-                    <p>Professional Makeup Artist</p>
-                </div>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/ritambrasharma_" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ritambra Sharma. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <div id="modalCaption"></div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+            `;
+            
+            portfolioGrid.appendChild(portfolioItem);
+            
+            // Add click event to new item
+            portfolioItem.addEventListener('click', () => {
+                openModal(item.image, item.title, item.description);
+            });
+        });
+    }
+    
+    // Initialize portfolio
+    generatePortfolioItems();
+    
+    // Portfolio filtering functionality
+    categories.forEach(category => {
+        category.addEventListener('click', () => {
+            // Remove active class from all categories
+            categories.forEach(cat => cat.classList.remove('active'));
+            
+            // Add active class to clicked category
+            category.classList.add('active');
+            
+            const filter = category.getAttribute('data-filter');
+            
+            // Filter portfolio items
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    
+    // Testimonial Slider
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const sliderDots = document.querySelector('.slider-dots');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentSlide = 0;
+    
+    // Create dots for each slide
+    if (testimonialSlides.length > 0 && sliderDots) {
+        testimonialSlides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+            sliderDots.appendChild(dot);
+        });
+    }
+    
+    const dots = document.querySelectorAll('.dot');
+    
+    // Initialize slider
+    function initSlider() {
+        if (testimonialSlides.length > 0) {
+            testimonialSlides[0].classList.add('active');
+        }
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        testimonialSlides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        testimonialSlides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+    }
+    
+    // Next slide
+    function nextSlide() {
+        const next = (currentSlide + 1) % testimonialSlides.length;
+        goToSlide(next);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        const prev = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
+        goToSlide(prev);
+    }
+    
+    // Add event listeners for slider controls
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    // Auto slide change if there are slides
+    if (testimonialSlides.length > 0) {
+        setInterval(nextSlide, 5000);
+    }
+    
+    // Initialize slider
+    initSlider();
+    
+    // Modal functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.close');
+    
+    function openModal(imgSrc, title, description) {
+        if (!modal || !modalImg || !modalCaption) return;
+        
+        modal.style.display = 'block';
+        modalImg.src = imgSrc;
+        modalCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+        
+        // Disable scroll on body
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close modal
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Close modal when clicking outside the image
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Form submission handler function
+window.submitForm = function(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('booking-form');
+    const responseDiv = document.getElementById('form-response');
+    
+    // Get form data
+    const formData = new FormData(form);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+    
+    // Show loading message
+    if (responseDiv) {
+        responseDiv.innerHTML = '<p class="text-info">Sending your message...</p>';
+    }
+    
+    // Replace with your actual Google Script URL - this is where you need to insert your deployed Google Apps Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzO_f1JqemCIWSCSmZg-PtrrFx-G4DB7R5ZFAcOMJFBSwvquSJlb0CKnBpMMicAXuST/exec';
+    
+    // Convert form data to URL encoded string for POST request
+    const urlEncodedData = new URLSearchParams();
+    Object.keys(formObject).forEach(key => {
+        urlEncodedData.append(key, formObject[key]);
+    });
+    
+    // Send data to Google Sheets
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // Important for cross-origin requests to Google Scripts
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncodedData
+    })
+    .then(() => {
+        // Show success message
+        if (responseDiv) {
+            responseDiv.innerHTML = '<p class="text-success">Thank you! Your booking request has been submitted. I will contact you shortly.</p>';
+        }
+        form.reset();
+    })
+    .catch(error => {
+        console.error('Error submitting form:', error);
+        if (responseDiv) {
+            responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly via email or phone.</p>';
+        }
+    });
+};
+    
+    // Smooth scrolling for navigation - FIXED VERSION
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetID = this.getAttribute('href');
+            const target = document.querySelector(targetID);
+            
+            if (target) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
