@@ -367,12 +367,60 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Form submission handling (prevent default for demo)
+    // Form submission handling for Google Sheets
+    // Define the submitForm function globally
+    window.submitForm = function(event) {
+        event.preventDefault();
+        
+        const form = document.getElementById('booking-form');
+        const responseDiv = document.getElementById('form-response');
+        
+        // Get form data
+        const formData = new FormData(form);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        
+        // Show loading message
+        if (responseDiv) {
+            responseDiv.innerHTML = '<p class="text-info">Sending your message...</p>';
+        }
+        
+        // Replace with your actual Google Script URL
+        const scriptURL = 'https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_ID_HERE/exec';
+        
+        // Send form data to Google Sheets
+        fetch(scriptURL, {
+            method: 'POST',
+            body: new URLSearchParams(formObject)
+        })
+        .then(response => {
+            // Handle successful form submission
+            if (responseDiv) {
+                responseDiv.innerHTML = '<p class="text-success">Thank you! Your booking request has been submitted. I will contact you shortly.</p>';
+            } else {
+                alert('Thank you! Your booking request has been submitted. I will contact you shortly.');
+            }
+            // Reset form
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle error
+            if (responseDiv) {
+                responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly via email or phone.</p>';
+            } else {
+                alert('There was an error submitting your form. Please try again or contact me directly via email or phone.');
+            }
+        });
+    };
+    
+    // Add submit event listener to the form
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
         bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! This form is currently for demonstration purposes only. Please contact Ritambra directly via email or phone.');
+            window.submitForm(e);
         });
     }
     
@@ -393,43 +441,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// Form submission to Google Sheets
-function submitForm(event) {
-    event.preventDefault();
-    
-    const form = document.getElementById('booking-form');
-    const responseDiv = document.getElementById('form-response');
-    
-    // Get form data
-    const formData = new FormData(form);
-    const formObject = {};
-    formData.forEach((value, key) => {
-        formObject[key] = value;
-    });
-    
-    // Show loading message
-    responseDiv.innerHTML = '<p class="text-info">Sending your message...</p>';
-    
-    // Send form data to Google Sheets
-    fetch('https://script.google.com/macros/s/AKfycbxQtO91bLydSBZj58NZs4t0nZRT1mkqQWWHJ7UubJk6oxYi52cd9_wrIt2Aj0xn81wM/exec', {
-        method: 'POST',
-        body: new URLSearchParams(formObject)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.result === 'success') {
-            // Show success message
-            responseDiv.innerHTML = '<p class="text-success">Thank you! Your booking request has been submitted. I will contact you shortly.</p>';
-            // Reset form
-            form.reset();
-        } else {
-            // Show error message
-            responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly.</p>';
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        responseDiv.innerHTML = '<p class="text-danger">There was an error submitting your form. Please try again or contact me directly.</p>';
-    });
-}
